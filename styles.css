@@ -35,3 +35,31 @@ button:hover {
 .courses {
   padding: 30px;
 }
+
+#contact {
+  width: 300px;
+  margin: 30px auto;
+}
+
+input, textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 1px solid var(--main-color);
+}
+
+input[type="radio"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+input[type="submit"] {
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px;
+  border: none;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
