@@ -77,7 +77,7 @@ if (form) {
     const genderChecked = document.querySelector('input[name="gender"]:checked');
 
     if (name && email && message && genderChecked ) {
-      alert("Message sent successfully!");
+      alert("We have recieved your message. Our team will get in touch with you regarding your query as soon as possible.");
       form.reset();
     } else {
       alert("Please fill in all fields.");
