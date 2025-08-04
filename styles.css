@@ -24,10 +24,14 @@ button:hover {
 }
 
 .profile {
-    padding: 30px;
+  padding: 30px;
     
 }
 .profile img {
   width: 150px;
   border-radius: 50%;
+}
+
+.courses {
+  padding: 30px;
 }
