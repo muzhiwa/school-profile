@@ -41,7 +41,7 @@ button:hover {
   margin: 30px auto;
 }
 
-input, textarea {
+form input, textarea {
   width: 100%;
   margin-bottom: 15px;
   padding: 8px;
