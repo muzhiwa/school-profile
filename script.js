@@ -32,3 +32,55 @@ if (contactInfo) {
     if (newStatus) document.getElementById("status").innerHTML = `Status: ${newStatus}`;
   });
 }
+
+let courses = [
+  { name: "Math", grade: 10 },
+  { name: "Physics", grade: 11 },
+  { name: "Biology", grade: 10 }
+];
+const courseList = document.getElementById("course-list");
+if (courseList) {
+  function renderCourses(filteredCourses = courses) {
+    courseList.innerHTML = "";
+    for (const course of filteredCourses) {
+      const div = document.createElement("div");
+      div.textContent = course.name + ` (Grade ${course.grade})`;
+      courseList.appendChild(div);
+    }
+  }
+  renderCourses();
+  document.getElementById("add-course").addEventListener("click", () => {
+    const input = document.getElementById("course-input");
+    const value = input.value.trim();
+    if (value) {
+      courses.push({ name: value, grade: 10 });
+      input.value = "";
+      renderCourses();
+    }
+  });
+  document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const grade = btn.dataset.grade;
+      const filtered = courses.filter(c => c.grade == grade);
+      renderCourses(filtered);
+    });
+  });
+}
+
+const form = document.getElementById("contact");
+if (form) {
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const genderChecked = document.querySelector('input[name="gender"]:checked');
+
+    if (name && email && message && genderChecked ) {
+      alert("Message sent successfully!");
+      form.reset();
+    } else {
+      alert("Please fill in all fields.");
+    }
+  });
+}
